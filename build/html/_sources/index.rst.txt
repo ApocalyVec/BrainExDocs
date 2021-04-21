@@ -59,7 +59,10 @@ Queries a built **brainexengine** for a query sequence.
    * filter_mode: string
    * loi: int or tuples of two ints
    * exclude_same_id: boolean
-   * overlap: float between 0 and 1 (inclusive)
+   * overlap: float between 0 and 1 (inclusive). **Default 1** Prevents found matches from overlapping with each other.
+      Set to 0 to allow NO overlapping between
+
+
 
 .. note::  Advanced parameter will be documented in the docs for developers.
 
