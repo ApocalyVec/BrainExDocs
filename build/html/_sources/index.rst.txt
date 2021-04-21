@@ -59,9 +59,7 @@ Queries a built **brainexengine** for a query sequence.
    * filter_mode: string
    * loi: int or tuples of two ints
    * exclude_same_id: boolean
-   * overlap: float between 0 and 1 (inclusive). **Default 1** Prevents found matches from overlapping with each other.
-      Set to 0 to allow NO overlapping between
-
+   * overlap: float between 0 and 1 (inclusive). **Default 1** Prevents found matches from overlapping with each other. Set to 0 to allow NO overlapping between found matches, set to 0.5 is to say that found matches should not overlap with each other for more than 50%, set to 1 (default) means any overlap is allowed. The algorithm preventing overlap operates in an iterative fashion: the best match is always returned, the second best match is check for overlapping with the first, if it meets the overlap requirement, this second best match will also be returned. If it does not meet the requirement, the algorithm will continue to the third match and repeat the process until the asked-for number of matches is found and satisfying the overlap requirements.
 
 
 .. note::  Advanced parameter will be documented in the docs for developers.
