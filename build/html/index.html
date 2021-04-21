@@ -46,10 +46,69 @@
 <div class="section" id="api-calls">
 <h2>API Calls<a class="headerlink" href="#api-calls" title="Permalink to this headline">¶</a></h2>
 <p>Here we detail some of the most commonly used API calls in the BrainEx API.</p>
+<div class="section" id="gxe-utils-load">
+<h3>gxe_utils.load<a class="headerlink" href="#gxe-utils-load" title="Permalink to this headline">¶</a></h3>
+<dl class="field-list simple">
+<dt class="field-odd">API</dt>
+<dd class="field-odd"><p><strong>gxe_utils.load(file_or_path, feature_num, num_worker, use_spark, header, driver_mem, max_result_mem)</strong></p>
+</dd>
+</dl>
+<p>Loads a existing <strong>genexengine</strong> that was saved to disk or create new one from a csv file.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="simple">
+<li><p>file_or_path: string</p></li>
+<li><p>feature_num: int</p></li>
+<li><p>num_worker: int</p></li>
+<li><p>use_spark: boolean</p></li>
+<li><p>header: None or int</p></li>
+<li><p>driver_mem: int</p></li>
+<li><p>max_result_mem: int</p></li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="brainexengine-build">
+<h3>brainexengine.build<a class="headerlink" href="#brainexengine-build" title="Permalink to this headline">¶</a></h3>
+<dl class="field-list simple">
+<dt class="field-odd">API</dt>
+<dd class="field-odd"><p><strong>brainexengine.build(st, dist_type, loi, verbose)</strong></p>
+</dd>
+</dl>
+<p>Build a <strong>brainexengine</strong> for future queries</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="simple">
+<li><p>st: float. Similarity threshold</p></li>
+<li><p>dist_type: string</p></li>
+<li><p>loi: int or tuples of two ints. Length of interest</p></li>
+<li><p>verbose: int 0 or 1</p></li>
+</ul>
+</dd>
+</dl>
+</div>
 <div class="section" id="brainexengine-query">
 <h3>brainexengine.query<a class="headerlink" href="#brainexengine-query" title="Permalink to this headline">¶</a></h3>
-<p>An example of using <span class="red">interpreted text</span></p>
-<p>brainexengine.query()</p>
+<dl class="field-list simple">
+<dt class="field-odd">API</dt>
+<dd class="field-odd"><p><strong>brainexengine.query(query, besk_k, id_filter, filter_mode, loi, exlude_same_id, overlap)</strong></p>
+</dd>
+</dl>
+<p>Queries a built <strong>brainexengine</strong> for a query sequence.</p>
+<dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="simple">
+<li><p>query: <strong>Sequence</strong> or <strong>ndarray</strong></p></li>
+<li><p>besk_k: int</p></li>
+<li><p>id_filter: list of strings</p></li>
+<li><p>filter_mode: string</p></li>
+<li><p>loi: int or tuples of two ints</p></li>
+<li><p>exclude_same_id: boolean</p></li>
+<li><p>overlap: float between 0 and 1 (inclusive)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Advanced parameter will be documented in the docs for developers.</p>
+</div>
 <div class="toctree-wrapper compound">
 </div>
 </div>
@@ -77,6 +136,8 @@
 <li><a class="reference internal" href="#about-brainex">About BrainEx</a><ul>
 <li><a class="reference internal" href="#quick-start">Quick Start</a></li>
 <li><a class="reference internal" href="#api-calls">API Calls</a><ul>
+<li><a class="reference internal" href="#gxe-utils-load">gxe_utils.load</a></li>
+<li><a class="reference internal" href="#brainexengine-build">brainexengine.build</a></li>
 <li><a class="reference internal" href="#brainexengine-query">brainexengine.query</a></li>
 </ul>
 </li>
